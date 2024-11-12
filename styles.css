@@ -1,0 +1,379 @@
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    color: #49454f;
+}
+
+
+/* Sección Héroe */
+#hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    background: url('img/bannerescuela.jpg') no-repeat center center/cover;
+}
+
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Más opacidad para mayor contraste */
+    z-index: 1;
+}
+
+#hero h1 {
+    position: relative;
+    font-size: 3rem;
+    margin: 0;
+    padding: 20px;
+    z-index: 2;
+}
+
+/* Estilo del navbar */
+.navbar {
+    width: 100%; /* Ocupar todo el ancho de la ventana */
+    background-color: #001F3F; /* Fondo del navbar */
+    padding: 10px 0; /* Espacio alrededor del navbar */
+    display: flex;
+    justify-content: center; /* Centrar el contenido horizontalmente */
+    align-items: center; /* Alinea el navbar verticalmente si tiene altura */
+}
+
+/* Ajustes de la lista */
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Hace que los elementos sean horizontales */
+    justify-content: center; /* Centra los enlaces */
+    align-items: center; /* Alinea verticalmente los enlaces */
+}
+
+.navbar ul li {
+    margin: 0 15px; /* Espacio entre los elementos de la lista */
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    padding: 10px; /* Espacio alrededor del texto del enlace */
+    transition: background-color 0.3s ease;
+    text-align: center; /* Asegura que el texto dentro del enlace esté centrado */
+}
+
+.navbar ul li a:hover {
+    background-color: #575757; /* Color al hacer hover */
+    border-radius: 4px;
+}
+
+/* Asegurarse de que el navbar ocupe el espacio completo */
+.navbar ul {
+    flex-grow: 1; /* Permite que el ul crezca y ocupe espacio */
+}
+
+
+/* Sección Aprender */
+#aprender {
+    background-color: #4FA3B5;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+
+h2{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile {
+    border-radius: 15px;
+    padding: 40px;
+    margin: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombras más sutiles */
+    text-align: left;
+    width:100%;
+    vertical-align: top;
+    display: inline-block;
+    box-sizing: border-box;
+    min-height: 450px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+.icon-left > img{
+    width: 30px;
+}
+.icon-right > img{
+    width: 30px;
+}
+
+/* Responsividad: alineación de las tarjetas en mobile */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .profile {
+        width: calc(100% - 40px);
+        margin: 10px auto;
+    }
+
+    #aprender {
+        padding: 20px;
+    }
+}
+
+/* Estilos para las tarjetas */
+.card-habilidades, .card-caracteristicas {
+    background-color: #B7E0FF;
+}
+
+/* Estilo de los títulos */
+.profile h3 {
+    font-size: 1.5em;
+    color: #49454f;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilo de los ítems */
+.profile ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.profile li {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-weight: 400;
+    color: #333;
+}
+
+/* Sección de Tecnologías */
+#technologies {
+    padding: 40px 20px;
+    background-color: #5B9EA9;
+    text-align: center;
+}
+
+.tech-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.tech-icons img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-top: 10px;
+    transition: transform 0.3s;
+}
+
+.tech-icons img:hover {
+    transform: scale(1.1);
+}
+
+/* Sección de Proyectos */
+#projects {
+    padding: 50px 20px;
+    background-color: #3A6D8C;
+    text-align: center;
+}
+
+#projects h2 {
+    margin-bottom: 20px;
+}
+
+.project-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-item {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 25px 0;
+    flex-wrap: wrap;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project-item img {
+    width: 40%;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.project-info {
+    flex: 1;
+}
+
+.project-info > a{
+    background-color: #001F3F;
+    padding: 10px 40px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    margin-top: 30px;
+}
+
+
+.project-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.project-item:nth-child(even) img {
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+/* Sección de Testimonios */
+#testimonials {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #1D4665;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonial-card {
+    background-color: #2E2F2B;
+    border-radius: 10px;
+    padding: 50px;
+    margin: 50px auto;
+    transition: transform 0.3s;
+    width: fit-content;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.05);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.testimonial-comment {
+    font-size: 1em;
+    margin: 15px 0;
+}
+
+.testimonial-footer .icon-insta img {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #1D4665;
+    border-radius: 50%;
+}
+
+/* Call to Action */
+#cta {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #001F3F;
+    color: #FFFFFF;
+}
+
+#cta h2 {
+    font-size: 2.5rem;
+}
+
+/* Estilo base para el pie de página */
+#footer {
+    background-color: #000C1F;
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.social-links img {
+    width: 30px;
+    margin: 0 10px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: brightness(1);
+}
+
+.social-links img:hover {
+    transform: scale(1.2);
+}
+
+.social-links img:nth-child(1):hover { filter: brightness(1) hue-rotate(0deg); }
+.social-links img:nth-child(2):hover { filter: brightness(1) hue-rotate(210deg); }
+.social-links img:nth-child(3):hover { filter: brightness(1) hue-rotate(290deg); }
+.social-links img:nth-child(4):hover { filter: brightness(1) hue-rotate(240deg); }
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    #hero h1 { font-size: 2rem; }
+    .project-carousel { flex-direction: column; }
+    #cta { padding: 30px 10px; }
+    .testimonial-card { margin: 30px 20px; width: calc(100% - 40px); }
+    #aprender { padding: 20px; }
+    .profile { width: calc(100% - 20px); margin: 10px 0; }
+    .project-item { flex-direction: column; align-items: center; }
+    .project-item img { width: 100%; margin-bottom: 10px; }
+}
+
+@media (max-width: 480px) {
+    #projects h2 { font-size: 1.5rem; }
+    #footer { padding: 20px; }
+    .testimonial-comment { font-size: 0.9em; }
+}
